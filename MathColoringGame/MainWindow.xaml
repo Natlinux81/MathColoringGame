@@ -1,0 +1,99 @@
+﻿<Window x:Class="MathColoringGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MathColoringGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Border CornerRadius="20"
+            Background="Gray">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="230"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="Transparent"
+                    MouseDown="Border_MouseDown"/>
+
+            <Button Grid.Column="2"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Foreground="White"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,15,0"
+                    Height="25"
+                    Width="25"
+                    Content="✖" Click="BtnExit"/>
+
+            <Button Grid.Column="2"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Foreground="White"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,40,3"
+                    Height="25"
+                    Width="25"
+                    FontWeight="Bold"
+                    FontSize="18"
+                    Content="▢" Click="BtnMaximizeClick"/>
+
+            <Button Grid.Column="2"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Foreground="White"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,60,6"
+                    Height="25"
+                    Width="25"
+                    FontWeight="Bold"
+                    FontSize="18"
+                    Content="🗕" Click="BtnMinimizeClick"/>           
+          
+            <Button Grid.Column="1"
+                        Grid.Row="1"
+                        VerticalAlignment="Bottom"
+                    Width="100"
+                    Height="50"
+                    Content="Start Roll" Click="BtnRollClick"/>
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Width="100"
+                    Height="100">
+                <Border.Background>
+                    <ImageBrush x:Name="Dice1" ImageSource="/Images/DiceSix.png"/>
+                </Border.Background>
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Width="100"
+                    Height="100">
+                <Border.Background>
+                    <ImageBrush x:Name="Dice2" ImageSource="/Images/DiceSix.png"/>
+                </Border.Background>
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+
+</Window>
