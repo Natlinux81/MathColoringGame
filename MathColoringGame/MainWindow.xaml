@@ -67,7 +67,8 @@
                     Content="🗕" Click="BtnMinimizeClick"/>
 
 
-            <Button Style="{StaticResource ModernButton}"
+            <Button x:Name="BtnStartRoll"
+                    Style="{StaticResource ModernButton}"
                     Grid.Column="1"
                     Grid.Row="1"
                     VerticalAlignment="Bottom"
@@ -92,22 +93,22 @@
 
             <Border Grid.Row="1"
                     Grid.Column="1"
-                    Margin="0,30"
+                    Margin="15,40"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
-                    Width="100"
-                    Height="100">
+                    Width="80"
+                    Height="80">
                 <Border.Background>
                     <ImageBrush x:Name="Dice1" ImageSource="/Images/DiceSix.png"/>
                 </Border.Background>
             </Border>
-            <Border Margin="0,30"
+            <Border Margin="0,40,15,0"
                     Grid.Row="1"
                     Grid.Column="1"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right"
-                    Width="100"
-                    Height="100">
+                    Width="80"
+                    Height="80">
                 <Border.Background>
                     <ImageBrush x:Name="Dice2" ImageSource="/Images/DiceSix.png"/>
                 </Border.Background>
@@ -118,7 +119,7 @@
                     Grid.Column="1"
                     Grid.Row="1">
                 <TextBlock
-                    FontSize="16"
+                    FontSize="20"
                     FontWeight="Bold"
                     FontFamily="Comic Sans MS"
                     Text="Round: "/>
@@ -130,7 +131,7 @@
                      FontWeight="Bold"
                      Background="Transparent"
                      BorderThickness="0 "
-                     FontSize="16"
+                     FontSize="20"
                      Height="30"
                      FontFamily="Comic Sans MS"/>
             </WrapPanel>
@@ -256,7 +257,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Total Resul: "
+                    Text="Total Result: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p1TotalResult"
@@ -368,7 +369,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Total Resul: "
+                    Text="Total Result: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p2TotalResult"
@@ -392,7 +393,7 @@
                   Grid.Row="2"
                   Grid.Column="0"
                   Grid.ColumnSpan="3">
-                <Button Click="Button_Click" BorderBrush="Black" Background="{x:Null}"/>
+                <Button Click="Button_Click" BorderBrush="Black" Background="Red"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="2" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="3" BorderBrush="Black"/>

@@ -24,10 +24,9 @@ namespace MathColoringGame
 
         int cellCounter;
         int roundCounter;
-
+        
         private MarkTyp[] mResults;
-        private bool mPlayer1Turn;
-        //private bool mGameEnded;        
+        private bool mPlayer1Turn;               
 
         //Starts a new game an clear all values back to the start
         public void NewGame()
@@ -50,10 +49,7 @@ namespace MathColoringGame
             {
                 // Change background to default values
                 button.Background = Brushes.White;
-            });
-
-            // make sure the game hasn´t finished
-            //mGameEnded = false;
+            });            
         }
 
         // Ends the game
@@ -61,13 +57,32 @@ namespace MathColoringGame
         {
             if (roundCounter >= 6)
             {
-                Round.Text = "5";
-                MessageBox.Show("Ende");
-                //mGameEnded = true;
+                CheckWinner();
+                Round.Text = "5";                                
                 ClearAll();                
                 NewGame();
+                
                 mPlayer1Turn ^= true;
 
+            }
+        }
+
+        public void CheckWinner()
+        {
+            int endResult1 = int.Parse(p1TotalResult.Text);
+            int endResult2 = int.Parse(p2TotalResult.Text);
+
+            if (endResult1 > endResult2)
+            {
+                MessageBox.Show("The Winner is Player 1!");
+            }
+            if(endResult1 < endResult2)
+            {
+                MessageBox.Show("The Winner is Player 2!");
+            }
+            if(endResult1 == endResult2)
+            {
+                MessageBox.Show("The Game ended in a draw!");
             }
         }
 
@@ -107,22 +122,40 @@ namespace MathColoringGame
 
         // add Totalresulst by Player selectet cells
         public void PlayerResult()
-        {
-            
+        {      
+            // text to int
+            int p1result1 = int.Parse(p1round1.Text);
+            int p1result2 = int.Parse(p1round2.Text);
+            int p1result3 = int.Parse(p1round3.Text);
+            int p1result4 = int.Parse(p1round4.Text);
+            int p1result5 = int.Parse(p1round5.Text);
+
+            int p2result1 = int.Parse(p2round1.Text);
+            int p2result2 = int.Parse(p2round2.Text);
+            int p2result3 = int.Parse(p2round3.Text);
+            int p2result4 = int.Parse(p2round4.Text);
+            int p2result5 = int.Parse(p2round5.Text);
+
+            int totalResult1 = p1result1 + p1result2 + p1result3 + p1result4 + p1result5;
+            p1TotalResult.Text = Convert.ToString(totalResult1);
+
+            int totalResult2 = p2result1 + p2result2 + p2result3 + p2result4 + p2result5;
+            p2TotalResult.Text = Convert.ToString(totalResult2);
         }
 
         // count cells by player click cell
         public void CountCells()
-        {           
+        {
+            
             if (mPlayer1Turn && roundCounter == 1)
             {
                 cellCounter++;
-                p1round1.Text = cellCounter.ToString();
+                p1round1.Text = cellCounter.ToString();                
             }
             if (!(mPlayer1Turn) && roundCounter == 1)
             {
                 cellCounter++;
-                p2round1.Text = cellCounter.ToString();
+                p2round1.Text = cellCounter.ToString();                
             }
 
             if (mPlayer1Turn && roundCounter == 2)
@@ -207,6 +240,8 @@ namespace MathColoringGame
         // shuffle the dices
         private void BtnRollClick(object sender, RoutedEventArgs e)
         {
+            BtnStartRoll.Visibility = Visibility.Hidden;
+
             string finalImage1 = "DiceSix.png";
             string finalImage2 = "DiceOne.png";
 
@@ -297,6 +332,8 @@ namespace MathColoringGame
         // Handel count cells
         private void BtnEndTurnClick(object sender, RoutedEventArgs e)
         {
+            BtnStartRoll.Visibility = Visibility.Visible;
+
             // check how many cells the Player marks
             PlayerResult();            
 
