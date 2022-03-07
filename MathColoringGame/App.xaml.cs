@@ -13,5 +13,6 @@ namespace MathColoringGame
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

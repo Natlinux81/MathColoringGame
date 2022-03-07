@@ -24,7 +24,8 @@ namespace MathColoringGame
 
         int cellCounter;
         int roundCounter;
-        
+        int diceResult;
+
         private MarkTyp[] mResults;
         private bool mPlayer1Turn;               
 
@@ -34,6 +35,7 @@ namespace MathColoringGame
         {
             cellCounter = 0;
             roundCounter = 1;
+            
 
             // Create a new blanck aray of free cells
             mResults = new MarkTyp[180];
@@ -57,8 +59,8 @@ namespace MathColoringGame
         {
             if (roundCounter >= 6)
             {
-                CheckWinner();
-                Round.Text = "5";                                
+                Round.Text = "5";
+                CheckWinner();                                                
                 ClearAll();                
                 NewGame();
                 
@@ -89,7 +91,7 @@ namespace MathColoringGame
         // reset all fields
         private void ClearAll()
         {
-            Round.Text = "1";          
+            Round.Text = "1";
             
             p1round1.Text = "0";
             p1round2.Text = "0";
@@ -150,7 +152,8 @@ namespace MathColoringGame
             if (mPlayer1Turn && roundCounter == 1)
             {
                 cellCounter++;
-                p1round1.Text = cellCounter.ToString();                
+                p1round1.Text = cellCounter.ToString();
+                
             }
             if (!(mPlayer1Turn) && roundCounter == 1)
             {
@@ -236,7 +239,7 @@ namespace MathColoringGame
 
         // Instantiate random number generator.
         private readonly Random dice = new Random();
-        
+
         // shuffle the dices
         private void BtnRollClick(object sender, RoutedEventArgs e)
         {
@@ -244,6 +247,8 @@ namespace MathColoringGame
 
             string finalImage1 = "DiceSix.png";
             string finalImage2 = "DiceOne.png";
+
+                        
 
             // Gernerate Numbers in Range
             int number1 = dice.Next(1, 7);
@@ -267,9 +272,9 @@ namespace MathColoringGame
                 case 5:
                     finalImage1 = "DiceFive.png";
                     break;
-               case 6:
+                case 6:
                     finalImage1 = "DiceSix.png";
-                    break;                    
+                    break;
                 default:
                     finalImage1 = "DiceSix.png";
                     break;
@@ -301,38 +306,53 @@ namespace MathColoringGame
                     break;
             }
             Dice2.ImageSource = new BitmapImage(new Uri("Images/" + finalImage2, UriKind.Relative));
+
+            diceResult = number1 * number2;
+            testbox.Text = diceResult.ToString();
+            
+            
         }
+
+        
 
         // Handesl Cell click event                  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //cast the sender to Cell
-            var button = (Button)sender;
 
-            // bind the cells position in the array
-            var column = Grid.GetColumn(button);
-            var row = Grid.GetRow(button);
+            if (diceResult > 0 && diceResult != cellCounter)
+            {
+                //cast the sender to Cell
+                var button = (Button)sender;
 
-            var index = column + (row * 10);
 
-            // dont`t do anything if the cellalready has a value in it
-            if (mResults[index] != MarkTyp.Free)
-                return;
+                // bind the cells position in the array
+                var column = Grid.GetColumn(button);
+                var row = Grid.GetRow(button);
 
-            // set the cell value based on which players turn it is (Compact if else statement)
-            mResults[index] = mPlayer1Turn ? MarkTyp.Player1Red : MarkTyp.Player2Blue;
+                var index = column + (row * 10);
 
-            // set cell color to the result
-            button.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;
+                // dont`t do anything if the cellalready has a value in it
+                if (mResults[index] != MarkTyp.Free)
+                    return;
 
-            //count selectet cells per player
-            CountCells();                      
+                // set the cell value based on which players turn it is (Compact if else statement)
+                mResults[index] = mPlayer1Turn ? MarkTyp.Player1Red : MarkTyp.Player2Blue;
+
+                // set cell color to the result
+                button.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;
+                //count selectet cells per player
+                CountCells();
+            }                  
+                   
+                                             
         }
         
         // Handel count cells
         private void BtnEndTurnClick(object sender, RoutedEventArgs e)
         {
             BtnStartRoll.Visibility = Visibility.Visible;
+
+            diceResult = 0;
 
             // check how many cells the Player marks
             PlayerResult();            

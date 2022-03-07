@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MathColoringGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="780" Width="650"
+        Title="MainWindow" Height="780" Width="900"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
@@ -24,7 +24,7 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="230"/>
+                <ColumnDefinition Width="460"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
@@ -89,8 +89,8 @@
                     FontSize="18"
                     FontWeight="Bold"
                     FontFamily="Comic Sans MS"
-                    Content="End Turn" Click="BtnEndTurnClick"/>
-
+                    Content="End Turn" Click="BtnEndTurnClick"/>            
+            
             <Border Grid.Row="1"
                     Grid.Column="1"
                     Margin="15,40"
@@ -168,7 +168,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 1: "
+                    Text="Result Round 1: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p1round1" Text="0"
@@ -185,7 +185,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 2: "
+                    Text="Result Round 2: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p1round2"
@@ -203,7 +203,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 3: "
+                    Text="Result Round 3: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p1round3"
@@ -221,7 +221,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 4: "
+                    Text="Result Round 4: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p1round4"
@@ -239,7 +239,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 5: "
+                    Text="Result Round 5: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p1round5"
@@ -279,7 +279,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 1: "
+                    Text="Result Round 1: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p2round1"
@@ -297,7 +297,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 2: "
+                    Text="Result Round 2: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p2round2"
@@ -315,7 +315,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 3: "
+                    Text="Result Round 3: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p2round3"
@@ -333,7 +333,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 4: "
+                    Text="Result Round 4: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p2round4"
@@ -351,7 +351,7 @@
                     <TextBlock
                     Margin="10,30,0,0"
                     FontSize="16"
-                    Text="Resuld Round 5: "
+                    Text="Result Round 5: "
                     FontFamily="Comic Sans MS"/>
 
                     <TextBox x:Name="p2round5"
@@ -380,13 +380,31 @@
                              BorderThickness="0 "
                          FontSize="16"
                          Height="30"
-                         FontFamily="Comic Sans MS"/>
-                </WrapPanel>
+                         FontFamily="Comic Sans MS"/>                  
 
+                 </WrapPanel>
+                <WrapPanel>
+                    <TextBlock
+                    Margin="10,30,0,0"
+                    FontSize="16"
+                    Text="dice Result: "
+                    FontFamily="Comic Sans MS"/>
+
+                    <TextBox x:Name="testbox"
+                             Text="0"
+                             Margin="0,29,0,0"
+                             FontWeight="Bold"
+                             Background="Transparent"
+                             BorderThickness="0 "
+                         FontSize="16"
+                         Height="30"
+                         FontFamily="Comic Sans MS"/>
+
+                </WrapPanel>
             </StackPanel>
 
             <Grid x:Name="Container"
-                  Width="250"
+                  Width="450"
                   Height="450"
                   VerticalAlignment="Top"
                   Margin="28"
@@ -411,7 +429,10 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" BorderBrush="Black"/>
-
+                <Button Click="Button_Click" Background="White" Grid.Row="18" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" BorderBrush="Black"/>
+                
                 <Button Click="Button_Click" Background="Red" Grid.Column="1" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="1" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="2" Grid.Column="1" BorderBrush="Black"/>
@@ -430,7 +451,10 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="1" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="1" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="1" BorderBrush="Black"/>
-
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="1" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="1" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="1" BorderBrush="Black"/>
+                
                 <Button Click="Button_Click" Background="Red" Grid.Column="2" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="2" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="2" Grid.Column="2" BorderBrush="Black"/>
@@ -602,10 +626,23 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
