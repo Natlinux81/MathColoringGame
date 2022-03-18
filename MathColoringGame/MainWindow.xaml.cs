@@ -13,7 +13,7 @@ namespace MathColoringGame
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {        
+    {
         public MainWindow()
 
         {
@@ -27,7 +27,7 @@ namespace MathColoringGame
         int diceResult;
 
         private MarkTyp[] mResults;
-        private bool mPlayer1Turn;               
+        private bool mPlayer1Turn;
 
         //Starts a new game an clear all values back to the start
         public void NewGame()
@@ -35,10 +35,10 @@ namespace MathColoringGame
         {
             cellCounter = 0;
             roundCounter = 1;
-            
+
 
             // Create a new blanck aray of free cells
-            mResults = new MarkTyp[180];
+            mResults = new MarkTyp[420];
 
             for (var i = 0; i < mResults.Length; i++)
                 mResults[i] = MarkTyp.Free;
@@ -51,7 +51,7 @@ namespace MathColoringGame
             {
                 // Change background to default values
                 button.Background = Brushes.White;
-            });            
+            });
         }
 
         // Ends the game
@@ -60,10 +60,10 @@ namespace MathColoringGame
             if (roundCounter >= 6)
             {
                 Round.Text = "5";
-                CheckWinner();                                                
-                ClearAll();                
+                CheckWinner();
+                ClearAll();
                 NewGame();
-                
+
                 mPlayer1Turn ^= true;
 
             }
@@ -78,11 +78,11 @@ namespace MathColoringGame
             {
                 MessageBox.Show("The Winner is Player 1!");
             }
-            if(endResult1 < endResult2)
+            if (endResult1 < endResult2)
             {
                 MessageBox.Show("The Winner is Player 2!");
             }
-            if(endResult1 == endResult2)
+            if (endResult1 == endResult2)
             {
                 MessageBox.Show("The Game ended in a draw!");
             }
@@ -92,7 +92,7 @@ namespace MathColoringGame
         private void ClearAll()
         {
             Round.Text = "1";
-            
+
             p1round1.Text = "0";
             p1round2.Text = "0";
             p1round3.Text = "0";
@@ -124,7 +124,7 @@ namespace MathColoringGame
 
         // add Totalresulst by Player selectet cells
         public void PlayerResult()
-        {      
+        {
             // text to int
             int p1result1 = int.Parse(p1round1.Text);
             int p1result2 = int.Parse(p1round2.Text);
@@ -148,17 +148,17 @@ namespace MathColoringGame
         // count cells by player click cell
         public void CountCells()
         {
-            
+
             if (mPlayer1Turn && roundCounter == 1)
             {
                 cellCounter++;
                 p1round1.Text = cellCounter.ToString();
-                
+
             }
             if (!(mPlayer1Turn) && roundCounter == 1)
             {
                 cellCounter++;
-                p2round1.Text = cellCounter.ToString();                
+                p2round1.Text = cellCounter.ToString();
             }
 
             if (mPlayer1Turn && roundCounter == 2)
@@ -216,6 +216,8 @@ namespace MathColoringGame
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
+
+
         }
         // Minimize the Window on Click MinimizeButton
         private void BtnMinimizeClick(object sender, RoutedEventArgs e)
@@ -245,82 +247,95 @@ namespace MathColoringGame
         {
             BtnStartRoll.Visibility = Visibility.Hidden;
 
-            string finalImage1 = "DiceSix.png";
-            string finalImage2 = "DiceOne.png";
+            string finalImage1 = "Dice9.png";
+            string finalImage2 = "Dice2.png";
 
-                        
+
 
             // Gernerate Numbers in Range
-            int number1 = dice.Next(1, 7);
-            int number2 = dice.Next(1, 7);
+            int number1 = dice.Next(2, 10);
+            int number2 = dice.Next(2, 10);
 
             // switch Pictures by case
             switch (number1)
             {
-                case 1:
-                    finalImage1 = "DiceOne.png";
-                    break;
                 case 2:
-                    finalImage1 = "DiceTwo.png";
+                    finalImage1 = "Dice2.png";
                     break;
                 case 3:
-                    finalImage1 = "DiceThree.png";
+                    finalImage1 = "Dice3.png";
                     break;
                 case 4:
-                    finalImage1 = "DiceFour.png";
+                    finalImage1 = "Dice4.png";
                     break;
                 case 5:
-                    finalImage1 = "DiceFive.png";
+                    finalImage1 = "Dice5.png";
                     break;
                 case 6:
-                    finalImage1 = "DiceSix.png";
+                    finalImage1 = "Dice6.png";
+                    break;
+                case 7:
+                    finalImage1 = "Dice7.png";
+                    break;
+                case 8:
+                    finalImage1 = "Dice8.png";
+                    break;
+                case 9:
+                    finalImage1 = "Dice9.png";
                     break;
                 default:
-                    finalImage1 = "DiceSix.png";
+                    finalImage1 = "Dice9.png";
                     break;
             }
             Dice1.ImageSource = new BitmapImage(new Uri("Images/" + finalImage1, UriKind.Relative));
 
             switch (number2)
             {
-                case 1:
-                    finalImage2 = "DiceOne.png";
-                    break;
                 case 2:
-                    finalImage2 = "DiceTwo.png";
+                    finalImage2 = "Dice2.png";
                     break;
                 case 3:
-                    finalImage2 = "DiceThree.png";
+                    finalImage2 = "Dice3.png";
                     break;
                 case 4:
-                    finalImage2 = "DiceFour.png";
+                    finalImage2 = "Dice4.png";
                     break;
                 case 5:
-                    finalImage2 = "DiceFive.png";
+                    finalImage2 = "Dice5.png";
                     break;
                 case 6:
-                    finalImage2 = "DiceSix.png";
+                    finalImage2 = "Dice6.png";
+                    break;
+                case 7:
+                    finalImage2 = "Dice7.png";
+                    break;
+                case 8:
+                    finalImage2 = "Dice8.png";
+                    break;
+                case 9:
+                    finalImage2 = "Dice9.png";
                     break;
                 default:
-                    finalImage2 = "DiceOne.png";
+                    finalImage2 = "Dice9.png";
                     break;
             }
             Dice2.ImageSource = new BitmapImage(new Uri("Images/" + finalImage2, UriKind.Relative));
 
             diceResult = number1 * number2;
-            testbox.Text = diceResult.ToString();
             
-            
+
+
         }
 
-        
+
 
         // Handesl Cell click event                  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+           
             if (diceResult > 0 && diceResult != cellCounter)
             {
+                
                 //cast the sender to Cell
                 var button = (Button)sender;
 
@@ -329,7 +344,7 @@ namespace MathColoringGame
                 var column = Grid.GetColumn(button);
                 var row = Grid.GetRow(button);
 
-                var index = column + (row * 10);
+                var index = column + (row * 20);
 
                 // dont`t do anything if the cellalready has a value in it
                 if (mResults[index] != MarkTyp.Free)
@@ -342,32 +357,34 @@ namespace MathColoringGame
                 button.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;
                 //count selectet cells per player
                 CountCells();
-            }                  
-                   
-                                             
+            }
+
+
         }
-        
+
         // Handel count cells
         private void BtnEndTurnClick(object sender, RoutedEventArgs e)
         {
+
             BtnStartRoll.Visibility = Visibility.Visible;
 
             diceResult = 0;
 
             // check how many cells the Player marks
-            PlayerResult();            
+            PlayerResult();
 
             //count rounds
             CountRounds();
 
             // Check if game is end
             GameEnded();
-            
+
             mPlayer1Turn ^= true;
 
             cellCounter = 0;
-        }
-                
+        }   
+
+        
     }   
 }
 

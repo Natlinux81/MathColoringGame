@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MathColoringGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="780" Width="900"
+        Title="MainWindow" Height="850" Width="850"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
@@ -14,21 +14,31 @@
     <Border CornerRadius="20"
             Background="Gray">
 
+        
+
         <Grid>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
-                <RowDefinition Height="180"/>
+                <RowDefinition Height="220"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="460"/>
+                <ColumnDefinition Width="500"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Border Grid.Row="1"
+                Grid.Column="1"
+                Background="DarkGreen"
+                Width="350"
+                Height="210"
+                BorderThickness="3"
+                BorderBrush="Black"/>
 
             <Border Grid.Row="0"
+                    Grid.ColumnSpan="3"                    
                     Background="Transparent"
                     MouseDown="Border_MouseDown"/>
 
@@ -68,6 +78,7 @@
 
 
             <Button x:Name="BtnStartRoll"
+                    Margin="0,0,0,20"
                     Style="{StaticResource ModernButton}"
                     Grid.Column="1"
                     Grid.Row="1"
@@ -83,7 +94,7 @@
                     Grid.Column="1"
                     Grid.Row="2"
                     VerticalAlignment="Bottom"
-                    Margin="20"
+                    Margin="40"
                     Width="120"
                     Height="45"
                     FontSize="18"
@@ -93,33 +104,33 @@
             
             <Border Grid.Row="1"
                     Grid.Column="1"
-                    Margin="15,40"
+                    Margin="120,40"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
-                    Width="80"
-                    Height="80">
+                    Width="100"
+                    Height="100">
                 <Border.Background>
-                    <ImageBrush x:Name="Dice1" ImageSource="/Images/DiceSix.png"/>
+                    <ImageBrush x:Name="Dice1" ImageSource="/Images/Dice9.png"/>
                 </Border.Background>
             </Border>
-            <Border Margin="0,40,15,0"
+            <Border Margin="0,40,120,0"
                     Grid.Row="1"
                     Grid.Column="1"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right"
-                    Width="80"
-                    Height="80">
+                    Width="100"
+                    Height="100">
                 <Border.Background>
-                    <ImageBrush x:Name="Dice2" ImageSource="/Images/DiceSix.png"/>
+                    <ImageBrush x:Name="Dice2" ImageSource="/Images/Dice9.png"/>
                 </Border.Background>
             </Border>
 
             <WrapPanel
                     HorizontalAlignment="Center"
                     Grid.Column="1"
-                    Grid.Row="1">
+                    Grid.Row="0">
                 <TextBlock
-                    FontSize="20"
+                    FontSize="22"
                     FontWeight="Bold"
                     FontFamily="Comic Sans MS"
                     Text="Round: "/>
@@ -138,7 +149,7 @@
 
 
             <TextBlock
-                    Margin="0,10,0,0"
+                    Margin="0,40,0,0"
                     Grid.Row="1"
                     HorizontalAlignment="Center"
                     Text="Player 1"
@@ -150,7 +161,7 @@
                 </TextBlock.Effect>
             </TextBlock>
             <TextBlock
-                    Margin="0,10,0,0"
+                    Margin="0,40,0,0"
                     Grid.Row="1"
                     Grid.Column="2"
                     HorizontalAlignment="Center"
@@ -274,10 +285,10 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="2"
-                        Margin="15,0,0,0">
+                        Margin="0,0,0,0">
                 <WrapPanel>
                     <TextBlock
-                    Margin="10,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="16"
                     Text="Result Round 1: "
                     FontFamily="Comic Sans MS"/>
@@ -295,7 +306,7 @@
 
                 <WrapPanel>
                     <TextBlock
-                    Margin="10,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="16"
                     Text="Result Round 2: "
                     FontFamily="Comic Sans MS"/>
@@ -313,7 +324,7 @@
 
                 <WrapPanel>
                     <TextBlock
-                    Margin="10,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="16"
                     Text="Result Round 3: "
                     FontFamily="Comic Sans MS"/>
@@ -331,7 +342,7 @@
 
                 <WrapPanel>
                     <TextBlock
-                    Margin="10,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="16"
                     Text="Result Round 4: "
                     FontFamily="Comic Sans MS"/>
@@ -349,7 +360,7 @@
 
                 <WrapPanel>
                     <TextBlock
-                    Margin="10,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="16"
                     Text="Result Round 5: "
                     FontFamily="Comic Sans MS"/>
@@ -367,7 +378,7 @@
 
                 <WrapPanel>
                     <TextBlock
-                    Margin="10,30,0,0"
+                    Margin="0,30,0,0"
                     FontSize="16"
                     Text="Total Result: "
                     FontFamily="Comic Sans MS"/>
@@ -383,24 +394,7 @@
                          FontFamily="Comic Sans MS"/>                  
 
                  </WrapPanel>
-                <WrapPanel>
-                    <TextBlock
-                    Margin="10,30,0,0"
-                    FontSize="16"
-                    Text="dice Result: "
-                    FontFamily="Comic Sans MS"/>
-
-                    <TextBox x:Name="testbox"
-                             Text="0"
-                             Margin="0,29,0,0"
-                             FontWeight="Bold"
-                             Background="Transparent"
-                             BorderThickness="0 "
-                         FontSize="16"
-                         Height="30"
-                         FontFamily="Comic Sans MS"/>
-
-                </WrapPanel>
+               
             </StackPanel>
 
             <Grid x:Name="Container"
@@ -411,9 +405,9 @@
                   Grid.Row="2"
                   Grid.Column="0"
                   Grid.ColumnSpan="3">
-                <Button Click="Button_Click" BorderBrush="Black" Background="Red"/>
+                <Button BorderBrush="Black" Background="Red" Click="Button_Click"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" BorderBrush="Black"/>
-                <Button Click="Button_Click" Background="Red" Grid.Row="2" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="Red" Grid.Row="2" BorderBrush="Black" />
                 <Button Click="Button_Click" Background="Red" Grid.Row="3" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="blue" Grid.Row="4" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="blue" Grid.Row="5" BorderBrush="Black"/>
@@ -473,6 +467,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="2" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="2" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="2" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="2" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="2" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="2" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="3" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="3" BorderBrush="Black"/>
@@ -492,6 +489,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="3" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="3" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="3" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="3" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="3" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="3" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="4" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="4" BorderBrush="Black"/>
@@ -511,6 +511,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="4" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="4" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="4" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="4" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="4" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="4" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="5" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="5" BorderBrush="Black"/>
@@ -530,6 +533,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="5" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="5" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="5" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="5" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="5" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="5" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="6" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="6" BorderBrush="Black"/>
@@ -549,6 +555,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="6" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="6" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="6" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="6" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="6" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="6" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="7" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="7" BorderBrush="Black"/>
@@ -568,6 +577,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="7" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="7" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="7" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="7" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="7" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="7" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="8" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="8" BorderBrush="Black"/>
@@ -587,6 +599,9 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="8" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="8" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="8" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="8" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="8" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="8" BorderBrush="Black"/>
 
                 <Button Click="Button_Click" Background="Red" Grid.Column="9" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="9" BorderBrush="Black"/>
@@ -606,6 +621,229 @@
                 <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="9" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="9" BorderBrush="Black"/>
                 <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="9" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="9" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="9" BorderBrush="Black"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="9" BorderBrush="Black"/>
+
+                <Button Click="Button_Click" Background="Red" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="Red" Grid.Row="1" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="Red" Grid.Row="2" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="blue" Grid.Row="3" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="blue" Grid.Row="4" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="blue" Grid.Row="5" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="blue" Grid.Row="6" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="10" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="11" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="12" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="13" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="14" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="15" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="16" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="17" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="18" BorderBrush="Black" Margin="5,0,-5,0"/>
+
+                <Button Click="Button_Click" Background="White" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="1" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="2" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="3" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="4" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="5" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="6" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="7" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="8" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="9" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="10" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="11" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="12" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="13" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="14" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="15" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="16" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="17" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="18" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="19" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
+                <Button Click="Button_Click" Background="White" Grid.Row="20" Grid.Column="19" BorderBrush="Black" Margin="5,0,-5,0"/>
 
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -641,7 +879,9 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition>
+                                    
+                    </ColumnDefinition>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -653,6 +893,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                
 
             </Grid>
         </Grid>

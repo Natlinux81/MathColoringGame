@@ -10,6 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Dice2.png" />
+    <None Remove="Images\Dice3.png" />
+    <None Remove="Images\Dice4.png" />
+    <None Remove="Images\Dice5.png" />
+    <None Remove="Images\Dice6.png" />
+    <None Remove="Images\Dice7.png" />
+    <None Remove="Images\Dice8.png" />
+    <None Remove="Images\Dice9.png" />
     <None Remove="Images\DiceFive.png" />
     <None Remove="Images\DiceFour.png" />
     <None Remove="Images\DiceOne.png" />
@@ -19,6 +27,30 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\Dice2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Dice9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\DiceFive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
