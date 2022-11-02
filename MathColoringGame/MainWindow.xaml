@@ -493,7 +493,7 @@
                 <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Row="20" Grid.Column="3" BorderBrush="Black"/>
 
                 <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Column="4" BorderBrush="Black"/>
-                <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Column="4" BorderBrush="Black" Height="22" Margin="0,21,0,0" Grid.RowSpan="3" VerticalAlignment="Top"/>
+                <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Row="1" Grid.Column="4" BorderBrush="Black" Height="22"/>
                 <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Row="2" Grid.Column="4" BorderBrush="Black"/>
                 <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Row="3" Grid.Column="4" BorderBrush="Black"/>
                 <CheckBox Style="{StaticResource CheckboxTheme }" Checked="Button_Click" GotMouseCapture="CheckBox_GotMouseCapture" MouseEnter="CheckBox_MouseEnter" Grid.Row="4" Grid.Column="4" BorderBrush="Black"/>
