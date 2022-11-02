@@ -17,25 +17,27 @@ namespace MathColoringGame
         public MainWindow()
 
         {
-            InitializeComponent();
+            InitializeComponent();          
 
             NewGame();
-        }
-
+            
+        } 
+        
         int cellCounter;
         int roundCounter;
         int diceResult;
 
         private MarkTyp[] mResults;
         private bool mPlayer1Turn;
+        
 
         //Starts a new game an clear all values back to the start
         public void NewGame()
-
-        {
+        {     
             cellCounter = 0;
             roundCounter = 1;
 
+            
 
             // Create a new blanck aray of free cells
             mResults = new MarkTyp[420];
@@ -44,13 +46,13 @@ namespace MathColoringGame
                 mResults[i] = MarkTyp.Free;
 
             // make sure Player1 is starts The game
-            mPlayer1Turn = true;
+            mPlayer1Turn = true;            
 
             // interate every Cell on the grid
-            Container.Children.Cast<Button>().ToList().ForEach(button =>
+            Container.Children.Cast<CheckBox>().ToList().ForEach(checkbox =>
             {
                 // Change background to default values
-                button.Background = Brushes.White;
+                checkbox.Background = Brushes.White;                
             });
         }
 
@@ -211,41 +213,16 @@ namespace MathColoringGame
             Application.Current.Shutdown();
         }
 
-        // Drag Window by MouseDown
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-
-
-        }
-        // Minimize the Window on Click MinimizeButton
-        private void BtnMinimizeClick(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-
-        // Maximize Window on Click MaximizeButton
-        private void BtnMaximizeClick(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == WindowState.Normal)
-            {
-                this.WindowState = WindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = WindowState.Normal;
-            }
-
-        }
 
         // Instantiate random number generator.
         private readonly Random dice = new Random();
 
         // shuffle the dices
         private void BtnRollClick(object sender, RoutedEventArgs e)
-        {
-            BtnStartRoll.Visibility = Visibility.Hidden;
+        {           
+           
+            BtnStartRoll.Visibility = Visibility.Hidden;          
+            
 
             string finalImage1 = "Dice9.png";
             string finalImage2 = "Dice2.png";
@@ -331,18 +308,18 @@ namespace MathColoringGame
 
         // Handesl Cell click event                  
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {            
            
             if (diceResult > 0 && diceResult != cellCounter)
             {
                 
                 //cast the sender to Cell
-                var button = (Button)sender;
+                var checkbox = (CheckBox)sender;
 
 
                 // bind the cells position in the array
-                var column = Grid.GetColumn(button);
-                var row = Grid.GetRow(button);
+                var column = Grid.GetColumn(checkbox);
+                var row = Grid.GetRow(checkbox);
 
                 var index = column + (row * 20);
 
@@ -354,7 +331,7 @@ namespace MathColoringGame
                 mResults[index] = mPlayer1Turn ? MarkTyp.Player1Red : MarkTyp.Player2Blue;
 
                 // set cell color to the result
-                button.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;
+                checkbox.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;
                 //count selectet cells per player
                 CountCells();
             }
@@ -379,12 +356,65 @@ namespace MathColoringGame
             // Check if game is end
             GameEnded();
 
-            mPlayer1Turn ^= true;
+            mPlayer1Turn = true;            
 
             cellCounter = 0;
-        }   
+        }
 
-        
+
+        // CheckBox check by holding MousButton
+        private void CheckBox_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                var checkbox = sender as CheckBox;
+                if (checkbox != null)
+                {
+                    checkbox.IsChecked = !checkbox.IsChecked;
+                    checkbox.ReleaseMouseCapture();                    
+                }
+            }
+        }
+
+        private void CheckBox_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var checkbox = sender as CheckBox;
+
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (checkbox != null)
+                {
+                    checkbox.IsChecked = !checkbox.IsChecked;
+                }
+            }
+        }
+        // Drag Window by MouseDown
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+
+
+        }
+        // Minimize the Window on Click MinimizeButton
+        private void BtnMinimizeClick(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        // Maximize Window on Click MaximizeButton
+        private void BtnMaximizeClick(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+            }
+
+        }
     }   
 }
 
