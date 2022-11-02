@@ -221,8 +221,13 @@ namespace MathColoringGame
         private void BtnRollClick(object sender, RoutedEventArgs e)
         {           
            
-            BtnStartRoll.Visibility = Visibility.Hidden;          
-            
+            BtnStartRoll.Visibility = Visibility.Hidden;
+
+            Container.Children.Cast<CheckBox>().ToList().ForEach(checkbox =>
+            {
+                // uncheck all Checkboxes
+                checkbox.IsChecked = false;
+            });
 
             string finalImage1 = "Dice9.png";
             string finalImage2 = "Dice2.png";
@@ -312,10 +317,11 @@ namespace MathColoringGame
            
             if (diceResult > 0 && diceResult != cellCounter)
             {
+            
                 
                 //cast the sender to Cell
                 var checkbox = (CheckBox)sender;
-
+                
 
                 // bind the cells position in the array
                 var column = Grid.GetColumn(checkbox);
@@ -331,7 +337,7 @@ namespace MathColoringGame
                 mResults[index] = mPlayer1Turn ? MarkTyp.Player1Red : MarkTyp.Player2Blue;
 
                 // set cell color to the result
-                checkbox.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;
+                checkbox.Background = mPlayer1Turn ? Brushes.Red : Brushes.Blue;               
                 //count selectet cells per player
                 CountCells();
             }
@@ -342,7 +348,6 @@ namespace MathColoringGame
         // Handel count cells
         private void BtnEndTurnClick(object sender, RoutedEventArgs e)
         {
-
             BtnStartRoll.Visibility = Visibility.Visible;
 
             diceResult = 0;
@@ -356,7 +361,7 @@ namespace MathColoringGame
             // Check if game is end
             GameEnded();
 
-            mPlayer1Turn = true;            
+            mPlayer1Turn ^= true;            
 
             cellCounter = 0;
         }
