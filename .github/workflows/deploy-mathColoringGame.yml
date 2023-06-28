@@ -2,8 +2,9 @@ name: "DeployMathColoringGame"
 
 on:
   push:
-    tags:
-      - "math-coloring-game/v*"
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 env:
   PROJECT_PATH: MathColoringGame/MathColoringGame.csproj
