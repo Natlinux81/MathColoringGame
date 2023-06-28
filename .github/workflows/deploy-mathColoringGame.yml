@@ -1,4 +1,4 @@
-name: "Deploy MathColoringGame"
+name: "DeployMathColoringGame"
 
 on:
   push:
