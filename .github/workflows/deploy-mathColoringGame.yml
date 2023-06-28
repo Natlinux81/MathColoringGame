@@ -18,7 +18,7 @@ jobs:
 
       - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 6.0.x
 
       - run: dotnet restore ${{ env.PROJECT_PATH}}
 
@@ -37,5 +37,5 @@ jobs:
       - uses: csexton/release-asset-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN}}
-          pattern: MathColoringGame/bin/Release/net6.0-windows/win-x64/publish/*.exe
+          pattern: MathColoringGame/obj/Release/net6.0-windows/win-x64/publish/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
